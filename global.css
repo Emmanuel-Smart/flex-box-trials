@@ -1,0 +1,270 @@
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: 0;
+ font-family: sans-serif;
+ 
+}
+
+/* now let us make use of css variable */
+:root {
+  --color-primary: #6c63ff;
+  --color-success: #00bf8e;
+  --color-warning: #f7c94b;
+  --color-danger: #f75842;
+  --color-danger-variant: rgba(247, 88, 66, 0.4);
+  --color-white: #ffff;
+  --color-light: rgba(255, 255, 255, 0.7);
+  --color-black: #000;
+  --color-bg: #1f2641;
+  --color-bg1: #2e3267;
+  --color-bg2: #424890;
+
+  --container-width-lg: 76%;
+  --container-width-md: 90%;
+  --container-width-sm: 94%;
+  --transition: all 400ms ease;
+}
+
+/* end of css variables */
+
+/* we are going to continue with the basic styling */
+
+/* go grab fonts from google fonts */
+body {
+  line-height: 1.7;
+  color: var(--color-white);
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+/* the navbar */
+.navbar{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  position: fixed;
+  top: 0;
+  /* flex-wrap: wrap; */
+}
+
+.navbar h1{
+  margin-left: 140px;
+margin-top: 15px;
+}
+
+.links{
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  /* justify-content: center; */
+  margin-right: 50px;
+}
+
+.links li > a{
+  color: var(--color-white)
+}
+h1{
+  color: var(--color-white);
+  text-align: center;
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg1);
+  margin-top: 4rem;
+  padding: 4rem;
+  display: flex;
+  
+ 
+}
+ .container .left{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--color-bg2); */
+  gap: 25px;
+  margin-left: 70px;
+  /* background-color: transparent; */
+ }
+
+ .container .left button{
+  width: 90px;
+  padding: 10px;
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 1s ease-in-out 1ms;
+  animation: buttonAnimate 4s linear;
+  animation-iteration-count: infinite;
+  
+ }
+ .container .left button:hover{
+ font-size: 15px;
+ font-weight: bolder;
+ /* background-color: #000; */
+ padding: 15px;
+ width: 100px;
+ border-radius: 50%;
+ }
+
+ @keyframes buttonAnimate{
+
+  from{
+    opacity: 0;
+    filter: saturate(0);
+  }
+  to{
+    opacity: 1;
+    filter: contrast(1);
+  }
+
+ }
+
+ .right{
+  width: 80%;
+  height: 460px;
+  background-color: var(--color-bg2);
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-left: 2rem;
+  gap: 12px;
+  background-color: transparent;
+ 
+ }
+
+ .right .box{
+  background-color: var(--color-bg2);
+  border-radius: 12px;
+  padding: 10px;
+ }
+
+ .right .box h4{
+  text-align: center;
+  margin-top: 12px;
+ }
+ .right .box p{
+  margin-top: 12px;
+ }
+
+ /* inner grid box */
+
+ .right .box .box1{
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
+  margin-left: 77px;
+  background-color: var(--color-bg);
+ }
+ .right .box .box2{
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
+  margin-left: 77px;
+  background-color: var(--color-danger);
+ }
+ .right .box .box3{
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
+  margin-left: 77px;
+  background-color: var(--color-primary);
+ }
+ .right .box .box4{
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
+  margin-left: 77px;
+  background-color: var(--color-warning);
+ }
+ .right .box .box5{
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
+  margin-left: 77px;
+  background-color: var(--color-success);
+ }
+ .right .box .box6{
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
+  margin-left: 77px;
+  background-color: var(--color-bg);
+ }
+
+ .right .box:hover{
+  animation: pop linear 1.5s;
+  animation-iteration-count:infinite;
+ }
+
+ @keyframes pop{
+
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
+  }
+ }
+
+ /* responsiveness */
+  @media(max-width:700px){
+
+    .navbar{
+      width: 100%;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+    }
+
+    .navbar .links{
+      display: none;
+      
+    }
+    .navbar h1{
+      text-align: center;
+      margin-left: 40%;
+
+    }
+    .container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: var(--color-bg1);
+      /* overflow-y: scroll; */
+        /* background-color: transparent; */
+    
+    }
+    .container .left h3{
+      margin-top: -43px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .container .left p{
+      margin-left: -44px;
+    
+    }
+    .container .right{
+      display: flex;
+      flex-direction: column;
+    }
+    .left button{
+      margin-left: -44px;
+    }
+  }
+ /* .right .box:nth-child(1){
+   
+ } */
+
+
+
